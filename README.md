@@ -13,8 +13,9 @@ The system leverages **Retrieval-Augmented Generation (RAG)** with a local **Tin
 5. [Tech Stack](#-tech-stack)  
 6. [Folder Structure](#-folder-structure)  
 7. [Setup Instructions](#-setup-instructions)  
-8. [Usage](#-usage)  
-9. [Overview Screenshots](#-overview-screenshots)  
+8. [Usage](#-usage)
+9. [Technical Details](#-technical-details)
+10. [Overview Screenshots](#-overview-screenshots)  
 
 ---
 
@@ -141,27 +142,82 @@ streamlit run app_streamlit.py
 
 ---
 
+## 🔍 Technical Details
+### RAG Pipeline:
+
+- Extract text from uploaded `.docx` using `python-docx`.
+
+- Retrieve relevant ADGM rules from ChromaDB.
+
+- Pass retrieved context + document content to TinyLlama for analysis.
+
+### Checklist Verification:
+
+- Detects intended legal process (e.g., incorporation, licensing).
+
+- Compares uploaded documents with ADGM’s required list.
+
+### Red Flag Detection:
+
+- Highlights clauses not matching ADGM’s wording.
+
+- Detects jurisdiction mismatches.
+
+- Flags missing signatories.
+
+### Output Format Example:
+```
+{
+  "process": "Company Incorporation",
+  "documents_uploaded": 4,
+  "required_documents": 5,
+  "missing_document": "Register of Members and Directors",
+  "num_red_flags": 2,
+  "issues_found": [
+    {
+      "document": "Articles of Association",
+      "section": "Clause 3.1",
+      "issue": "Jurisdiction clause does not specify ADGM",
+      "severity": "High",
+      "suggestion": "Update jurisdiction to ADGM Courts."
+    }
+  ]
+}
+```
+
+---
+
+
 ## 🖼 Overview Screenshots
 
 ### 1. Comprehensive Document Review Dashboard
 A unified interface displaying uploaded documents, detected types, and compliance status for quick overview.  
+
+
 ![Document Review Screenshot](adgm_corp_agent/screenshots/ADGM_doc.png)
 
 ### 2. Automated Document Classification & Checklist Verification
-The system identifies document categories and highlights missing files against the ADGM-required checklist.  
+The system identifies document categories and highlights missing files against the ADGM-required checklist. 
+ 
 ![Document Processing Screenshot - Missing Docs](adgm_corp_agent/screenshots/doc_detection_missing.png)  
 ![Document Processing Screenshot - All Docs Present](adgm_corp_agent/screenshots/doc_detection.png)
 
 ### 3. Inline Red Flag Detection and Legal Commenting
 Detected compliance issues are annotated directly in the `.docx` file with contextual legal comments.  
+
+
 ![Red Flags Screenshot](adgm_corp_agent/screenshots/review_doc.png)
 
 ### 4. Interactive ADGM Chatbot Interface
 An AI-powered assistant for answering ADGM regulation queries in natural language.  
+
+
 ![Chatbot Interface Screenshot](adgm_corp_agent/screenshots/chatbot.png)
 
 ### 5. Expandable Legal Source Citations in Chat Responses
 Sources used for chatbot answers are neatly organized in collapsible sections for a cleaner view.  
+
+
 ![Chatbot Sources Screenshot](adgm_corp_agent/screenshots/sources.png)
 
 
