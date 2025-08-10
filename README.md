@@ -142,10 +142,27 @@ streamlit run app_streamlit.py
 ---
 
 ## 🖼 Overview Screenshots
----
-### 1.Document Review
+
+### 1. Comprehensive Document Review Dashboard
+A unified interface displaying uploaded documents, detected types, and compliance status for quick overview.  
 ![Document Review Screenshot](adgm_corp_agent/screenshots/ADGM_doc.png)
 
+### 2. Automated Document Classification & Checklist Verification
+The system identifies document categories and highlights missing files against the ADGM-required checklist.  
+![Document Processing Screenshot - Missing Docs](adgm_corp_agent/screenshots/doc_detection_missing.png)  
+![Document Processing Screenshot - All Docs Present](adgm_corp_agent/screenshots/doc_detection.png)
+
+### 3. Inline Red Flag Detection and Legal Commenting
+Detected compliance issues are annotated directly in the `.docx` file with contextual legal comments.  
+![Red Flags Screenshot](adgm_corp_agent/screenshots/review_doc.png)
+
+### 4. Interactive ADGM Chatbot Interface
+An AI-powered assistant for answering ADGM regulation queries in natural language.  
+![Chatbot Interface Screenshot](adgm_corp_agent/screenshots/chatbot.png)
+
+### 5. Expandable Legal Source Citations in Chat Responses
+Sources used for chatbot answers are neatly organized in collapsible sections for a cleaner view.  
+![Chatbot Sources Screenshot](adgm_corp_agent/screenshots/sources.png)
 
 
 
