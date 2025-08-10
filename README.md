@@ -220,6 +220,18 @@ Sources used for chatbot answers are neatly organized in collapsible sections fo
 
 ![Chatbot Sources Screenshot](adgm_corp_agent/screenshots/sources.png)
 
+---
+
+## 🙌 Credits
+
+
+- ADGM Official Documentation
+
+- TinyLlama via Ollama
+
+- ChromaDB
+
+- Streamlit
 
 
 
