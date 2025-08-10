@@ -87,4 +87,54 @@ adgm-corp-agent/
 └── app_streamlit.py # Streamlit UI entry point
 ```
 
+---
+
+## ⚙️ Setup Instructions
+1. **Clone the repository**
+```bash
+git clone https://github.com/2CentsCapitalHR/ai-engineer-task-smaranng.git
+cd ai-engineer-task-smaranng
+```
+2. **Create and activate a virtual environment**
+```bash
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# Mac/Linux
+source venv/bin/activate
+```
+3. **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+4. **Ensure Ollama and TinyLlama are installed locally**
+- Ollama download link:  https://ollama.com/download
+- Ensure Ollama is installed and running.
+```
+ollama pull tinyllama
+
+ollama run tinyllama
+
+```
+5. **Run the embedding process (first-time setup)**
+```
+python scripts/extract_pdf.py
+python scripts/embed_to_chroma.py
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
