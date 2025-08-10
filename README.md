@@ -122,6 +122,35 @@ python scripts/extract_pdf.py
 python scripts/embed_to_chroma.py
 ```
 
+ ---
+
+## 🚀 Usage
+---
+
+1. **Run the Streamlit app**
+```
+streamlit run app_streamlit.py
+```
+2. **Choose Mode in Sidebar**
+
+- **Document Review:** Upload .docx files → Get classification, checklist verification, and red flag review.
+
+- **Chatbot:** Ask any ADGM-related legal question with expandable sources.
+
+3. **Download Reviewed Docs** — After compliance review, click the download button to save the marked-up .docx.
+
+---
+
+## 🖼 Overview Screenshots
+---
+
+
+
+
+
+
+
+
 
 
 
