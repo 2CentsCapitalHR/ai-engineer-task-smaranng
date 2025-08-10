@@ -3,7 +3,7 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Chroma
 from app.docx_utils import extract_text_from_docx, save_marked_docx
 import json
-import ollama  # If TinyLlama is run via Ollama
+import ollama  
 from typing import List, Dict
 from pathlib import Path
 
