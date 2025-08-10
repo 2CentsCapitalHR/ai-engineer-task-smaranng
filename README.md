@@ -1,1 +1,90 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/vgbm4cZ0)
+# 🏦 ADGM Corporate Agent — Document Intelligence
+
+An AI-powered legal assistant designed to review, validate, and prepare documentation for business incorporation and compliance within the Abu Dhabi Global Market (ADGM) jurisdiction.  
+The system leverages **Retrieval-Augmented Generation (RAG)** with a local **TinyLlama model via Ollama** and **ChromaDB** to ensure compliance with real-world ADGM regulations.
+
+---
+
+## 📚 Table of Contents
+1. [Introduction](#-introduction)  
+2. [Project Overview](#-project-overview)  
+3. [Features](#-features)  
+4. [Implementation Details](#-implementation-details)  
+5. [Tech Stack](#-tech-stack)  
+6. [Folder Structure](#-folder-structure)  
+7. [Setup Instructions](#-setup-instructions)  
+8. [Usage](#-usage)  
+9. [Overview Screenshots](#-overview-screenshots)  
+
+---
+
+## 📌 Introduction
+This project implements the **ADGM Corporate Agent**, an AI-driven tool to assist businesses and individuals in ensuring their incorporation and compliance documents meet the **Abu Dhabi Global Market** (ADGM) legal requirements.  
+It verifies mandatory document checklists, highlights red flags, inserts contextual legal comments, and provides a reviewed `.docx` version along with a structured JSON summary.
+
+---
+
+## 📋 Project Overview
+- **Purpose:** Automate legal document review for ADGM jurisdiction.
+- **Approach:** Retrieval-Augmented Generation (RAG) using official ADGM documents and laws.
+- **Outputs:**  
+  - Reviewed `.docx` file with inline comments.
+  - JSON/Python dictionary summarizing detected red flags and missing documents.
+  - Interactive chatbot to query ADGM rules and regulations.
+
+---
+
+## ✨ Features
+- 📂 **Multiple Document Upload** — Accepts `.docx` legal documents.
+- 🔍 **Document Classification** — Automatically detects document type (e.g., AoA, MoA).
+- ✅ **Checklist Verification** — Compares uploaded files against ADGM's required documents.
+- 🚨 **Red Flag Detection** — Flags missing clauses, wrong jurisdiction references, and compliance issues.
+- 💬 **Inline Legal Comments** — Adds contextual comments with ADGM law citations directly inside `.docx`.
+- 🤖 **AI Q&A Chatbot** — Answer ADGM compliance questions using RAG.
+- 📊 **JSON Summary Output** — Returns structured data with issue counts and descriptions.
+- 📥 **Downloadable Reviewed Documents** — Export fully marked-up `.docx`.
+
+---
+
+## 🛠 Implementation Details
+1. **Document Processing** — Uses `python-docx` to parse and annotate `.docx` files.  
+2. **Embedding & Retrieval** — Extracts content from ADGM reference PDFs and embeds them into **ChromaDB** for semantic search.  
+3. **LLM Integration** — Local **TinyLlama** model is queried via Ollama to generate compliance review notes.  
+4. **Checklist Verification** — Matches detected document types against pre-defined ADGM process requirements.  
+5. **UI** — Built in **Streamlit** with a sidebar navigation for document review or chatbot mode.  
+6. **Expandable Source Citations** — In chatbot answers, sources are hidden under expandable sections for cleaner UI.
+
+---
+
+## 💻 Tech Stack
+- **Frontend/UI:** Streamlit  
+- **Backend Processing:** Python  
+- **Document Handling:** python-docx  
+- **Vector Store:** ChromaDB  
+- **Embeddings:** Local embedding model (via Ollama)  
+- **LLM:** TinyLlama (local, Ollama)  
+- **PDF Processing:** PyMuPDF / pdfplumber  
+
+---
+
+## 📂 Folder Structure
+
+```
+adgm-corp-agent/
+├── data/
+│ └── Data Sources.pdf # ADGM reference document
+├── adgm_chromadb/ # ChromaDB persistent storage
+├── scripts/
+│ ├── extract_pdf.py # Extract text from PDFs
+│ ├── embed_to_chroma.py # Embed extracted text into ChromaDB
+│ └── test_retrieval.py # Test semantic retrieval
+├── app/
+│ ├── review_pipeline.py # Review logic, checklist verification, JSON output
+│ └── docx_utils.py # DOCX parsing and annotation functions
+├── screenshots/ # UI screenshots for documentation
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation (this file)
+└── app_streamlit.py # Streamlit UI entry point
+```
+
+
