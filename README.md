@@ -212,7 +212,7 @@ Detected compliance issues are annotated directly in the `.docx` file with conte
 An AI-powered assistant for answering ADGM regulation queries in natural language.  
 
 
-![Chatbot Interface Screenshot](adgm_corp_agent/screenshots/chatbot.png)
+![Chatbot Interface Screenshot](adgm_corp_agent/screenshots/chat_bot.png)
 
 ### 5. Expandable Legal Source Citations in Chat Responses
 Sources used for chatbot answers are neatly organized in collapsible sections for a cleaner view.  
