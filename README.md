@@ -184,6 +184,15 @@ streamlit run app_streamlit.py
   ]
 }
 ```
+### 💬 Chatbot (ADGM Q&A Assistant)
+
+- Uses the same ChromaDB knowledge base to retrieve relevant ADGM laws and guidelines.
+
+- Answers user questions about ADGM requirements using TinyLlama for natural language responses.
+
+- Supports expandable sources, showing only the reference titles/links until clicked.
+
+- Allows quick switching between Document Review and Chatbot via the sidebar navigation.
 
 ---
 
